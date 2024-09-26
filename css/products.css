@@ -1,0 +1,171 @@
+*{
+    font-family: Poppins;
+}
+/* OPTIONAL FOR NOW */
+ul .header-login-button{
+    background-color: #a72020; /* Match with your header text color */
+    color: white;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Spacing inside the button */
+    font-size: 1.2rem; /* Font size */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+ul .header-login-button:active{
+    transform: scale(0.9); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+.search-bar{
+    margin-top: 2em;
+    text-align: center;
+}
+.search-container{
+    width: max-content;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding: 15px;
+    border-radius:28px ;
+    background-color: #f6f6f6;
+    margin-top: 1em;
+    max-width: 100%;
+    width: 50em;
+    transition: background 0.25s ease;
+}
+.search-container:focus-within{
+    background-color: rgb(201, 200, 200);
+}
+.search-container:focus-within .fa-search{
+    color: black;
+}
+.search-bar h1{
+    font-weight: 700;
+}
+.search-input{
+    font-size: 16px;
+    font-family: "Poppins";
+    color: #333333;
+    margin-left: 14px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    flex: 1;
+}
+.search-input::placeholder,
+.fa-search{
+    color: rgba(0, 0, 0, 0.25);
+}
+
+
+/* Shopping View Section */
+
+
+.shop-grid-container{
+    display: grid;
+    /* THE 380px min in this code below is the main reason why is the image not being responsive in smaller viewport
+     */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    place-items: center;
+    padding-inline: 4em;
+    padding-block: 2em;
+    
+}
+
+/* For medium-sized screens (tablets) */
+@media (max-width: 1024px) {
+    .shop-grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        padding-inline: 2em;
+    }
+}
+
+    /* Mobile Viewport */
+@media (max-width: 768px) {
+    .shop-grid-container {
+        grid-template-columns: repeat(1, 1fr); 
+        padding-inline: 1em;
+    }
+
+    /* Make the image smaller in smaller viewport */
+    .shop-grid-item img {
+        width: 80%;  
+        height: auto; 
+    }
+}
+
+.item-card .shop-item-description p{
+    opacity: .8;
+    
+}
+.shop-grid-container .item-card .shop-image-container{
+    position: relative; 
+    overflow: hidden;
+    box-shadow: none; 
+    border-radius: .2em;
+}
+
+.shop-grid-container .item-card .shop-image-container img{
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;
+    background-color: rgb(231, 229, 229);
+
+}
+
+/* PAGINATION */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-block: 2.3em;
+    max-width: 100%;
+    min-width: 50%;
+    flex-wrap: wrap; /* Allow items to wrap */
+}
+
+.pagination .page-link {
+    color: black;
+    border-color: gray;
+    transition: ease .2s all;
+    padding-inline: 1.5em;
+    font-size: 1rem; /* Base font size */
+}
+
+.pagination .page-link:hover {
+    background-color: rgb(168, 164, 164);
+    font-weight: 700;
+}
+
+.pagination .page-link:active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: 700;
+}
+
+/* Pagination Responsive Design*/
+@media (max-width: 768px) {
+    .pagination .page-link {
+        padding: 0.5em 1em; 
+        font-size: 0.9rem; 
+    }
+}
+
+@media (max-width: 480px) {
+    .pagination .page-link {
+        padding: 0.3em 0.5em; 
+        font-size: 0.8rem; 
+    }
+}
+
+
+
+

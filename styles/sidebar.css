@@ -1,0 +1,24 @@
+body {
+overflow: hidden; /* Prevent scroll when sidebar is hidden */
+}
+.sidebar {
+min-height: 100vh;
+background-color: #f8f9fa;
+padding: 20px;
+width: 250px;
+transition: transform 0.3s ease;
+transform: translateX(-100%); /* Hide sidebar by default */
+}
+.sidebar.active {
+transform: translateX(0); /* Show sidebar */
+}
+.content {
+flex-grow: 1;
+padding: 20px;
+}
+.toggle-btn {
+position: absolute;
+left: 20px;
+top: 20px;
+z-index: 1000;
+}

@@ -1,0 +1,271 @@
+*{
+    scroll-behavior: smooth;
+    scroll-padding:6.5em;
+}
+
+.home-container {
+    background: linear-gradient(to right, #f8d5e0, #ffffff);
+    padding-inline: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    gap: 40px;
+    font-family: "Poppins";
+}
+
+.home-container img {
+    width: 80%; /* Adjust as needed */
+    height: auto; /* Let height adjust naturally */
+    max-height: 600px; /* Limit maximum height */
+    object-fit: cover; /* Maintain aspect ratio */
+    object-position: top;
+    filter: saturate(150%);
+}
+
+.home-text {
+    margin-inline: 2.3em;
+    width: 50%; /* Set the width for the text section */
+    padding-block: 3em;
+}
+
+.home-text > * {
+    margin-block: 1.2em;
+}
+
+.home-text h1 {
+    font-size: 3.3rem;
+    margin-bottom: 8px;
+}
+
+@media screen and (max-width: 850px) {
+    .home-container {
+        flex-direction: column; /* Stack elements */
+        align-items: center; /* Center items */
+        padding: 10px; /* Reduce padding */
+    }
+    .home-container img {
+        width: 100%; /* Full width for the image on smaller screens */
+    }
+    .home-text {
+        width: 100%; /* Full width for text on smaller screens */
+        text-align: center; /* Center text */
+        padding-block: 2em; /* Adjust padding */
+    }
+    .home-text h1 {
+        font-size: 2.5rem; /* Adjust font size for smaller screens */
+    }
+}
+
+span {
+    color: rgb(167, 20, 20);
+}
+
+button {
+    background-color: #a72020; /* Match with your header text color */
+    color: white;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Spacing inside the button */
+    font-size: 1.2rem; /* Font size */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:active{
+    transform: scale(0.9); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.featured-details button:active{
+    transform: scale(0.9); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* ABOUT SECTION */
+
+.about-us{
+    display: grid;
+    /* grid-template-columns: repeat(2, 2fr); */
+    grid-template-columns: 40% 60%;
+    grid-gap: 1.5rem;
+    align-items: center;
+    font-family: Poppins;
+    background-color: rgb(245, 242, 242);
+    margin: 0 auto;
+    padding-inline: 2em;
+}
+
+.about-img img{
+    max-width: 100%;
+    width: 380px;
+    height: auto;
+}
+.about-text {
+    width: 80%;
+}
+
+.about-text span{
+    color: rgb(167, 20, 20);
+    font-weight: 700;
+}
+
+.about-text h2{
+    font-size: 42px;
+    font-weight: 700;
+}
+.about-text p{
+    margin-block: 2em;
+    line-height: 1.7em;
+}
+@media screen and (max-width:725px){
+    .about-us{
+        grid-template-columns: 1fr;
+        place-items: center;
+    }
+}
+
+/* FEATURED SECTION */
+.featured{
+    margin-block: 3em;
+    padding-inline: 3em;
+}
+.featured .featured-title{
+    margin-inline: .5em;
+    margin-block: 2em;
+}
+
+.featured .featured-title h1{
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.featured-container {
+    display: flex; /* Keep flex for horizontal alignment */
+    align-items: center;
+    justify-content: center; 
+    flex-wrap: wrap;
+    overflow-x: hidden; /* Hide horizontal overflow */
+}
+
+.featured-card {
+    flex: 1 1 300px;
+    margin: .5em;
+    max-width: 430px; /* Limit width */
+    position: relative; /* Necessary for ::after positioning */
+    overflow: hidden;
+    box-shadow: none; 
+    border-radius: .2em;
+}
+
+.featured-card img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;
+    background-color: rgb(231, 229, 229);
+}
+
+.featured-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    opacity: 0; /* Start fully transparent */
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1; /* Overlay beneath text */
+}
+
+.featured-card .featured-details {
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: 0 auto;
+    transition: bottom 0.5s ease-in-out;
+    color: white;
+    z-index: 2; /* Ensure details are above the overlay */
+}
+
+.featured-card:hover::after {
+    opacity: 1; /* Fade in the overlay on hover */
+}
+
+.featured-card:hover .featured-details {
+    bottom: 70px; /* Slide into view */
+}
+
+.featured-card .featured-details p {
+    font-size: 28px;
+}
+
+.featured-card .featured-details button {
+    opacity: 0; /* Start invisible */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.featured-card:hover .featured-details button {
+    opacity: 1; /* Become visible on hover */
+    transform: translateY(0); /* Reset position to original */
+}
+
+.featured-details button {
+    transform: translateY(10px); /* Start slightly below */
+}
+
+
+@media screen and (max-width:735px){
+    .featured .featured-title{
+        text-align: center;
+    }
+}
+
+
+/* FOOTER SECTION START */
+
+.footer-container{
+    /* background-color: rgb(177, 175, 175); */
+    background-color: rgb(231, 229, 229);
+
+    padding: 2em;
+    position:sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1000; /* Adjust as needed */
+    margin-top: 2em;
+}
+.footer-grid-row{
+    display: grid;
+    grid-template-columns: 65% 35%;
+}
+.footer-main-section{
+    width: 65%;
+}
+
+.footer-main-section img{
+    color: white;
+}
+.footer-info-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.footer-info-section .info-details{
+    display: flex;
+}
+
+.footer-info-section .info-details strong, i{
+    margin-inline: 1em;
+}

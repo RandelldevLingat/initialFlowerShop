@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    padding-top: 6em;
+}
+
+.header-login-button {
+    border-radius: .2em;
+}
+
+.custom-color {
+    background-color: whitesmoke;
+}
+
+nav {
+    font-family: "Montserrat", sans-serif;
+    padding: 0;
+}
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+.nav-wrapper .navbar-toggler {
+    border: none; /* Remove the border */
+    outline: none; /* Remove the outline */
+    background-color: transparent; /* Optional: make background transparent */
+}
+
+.nav-wrapper .navbar-toggler:focus {
+    box-shadow: none; /* Remove focus outline */
+}
+
+.navbar-nav {
+    justify-content: center; /* Center the nav items */
+}
+
+.nav-wrapper img {
+    width: 130px;
+    height: 90px;
+}
+
+.logo {
+    height: 130px;
+    width: 160px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+}
+
+.nav-item > * {
+    margin-inline: .5em;
+    font-size: 18px;
+}
+
+.navbar-nav .nav-item .nav-link {
+    transition: all ease-in-out .3s;
+}
+
+.navbar-nav .nav-item .nav-link:hover,
+.navbar i:hover,
+.navbar-nav .nav-item .nav-link:active,
+.nav-item i:hover {
+    color: rgb(23, 37, 84);
+}
+
+.nav-item i {
+    font-size: 1.2em;
+    color: transparent; /* Makes the fill transparent */
+    -webkit-text-stroke: 2px black; /* Adds a black border */
+}
+
+/* Media query for mobile view */
+@media only screen and (max-width: 700px) {
+    .navbar-expand-custom .navbar-collapse {
+        display: none !important; /* Hide navbar collapse by default */
+    }
+
+    .navbar-expand-custom .navbar-toggler {
+        display: block; /* Show the hamburger menu button */
+    }
+
+    .navbar-expand-custom .navbar-collapse.show {
+        display: block !important; /* Show collapsed navbar when toggled */
+    }
+
+    .nav-item .fas {
+        margin-right: 1.5em;
+    }
+}
+
+@media (min-width: 701px) {
+    /* Apply flexbox to align items */
+    .navbar-expand-custom .navbar-collapse {
+        display: flex !important; /* Show navbar links normally */
+    }
+
+    .navbar-expand-custom .navbar-toggler {
+        display: none; /* Hide the hamburger menu */
+    }
+}
+
+@media (max-width: 990px) {
+    .navbar-nav.mb-4 {
+        display: flex; /* Ensure this section is always displayed */
+        flex-direction: row; /* Keep items in a row */
+        align-items: center;
+    }
+}
+
+
+/* THIS FIX THE ISSUE ON DISPLAYING THE UL ELEMENTS VERTICALLY CENTERED */
+@media (max-width: 991px) {
+    .navbar-nav.mb-4 {
+        display: flex;
+        flex-direction: row;
+        align-items: center; /* Vertically align items */
+        justify-content: flex-end; /* Align to the right */
+        margin-top: auto; /* Add this to push items to the bottom */
+    }
+
+    .nav-item a{
+        font-size: 13px;
+    }
+
+    .navbar-collapse {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align to the start */
+        display: none; /* Hide by default */
+    }
+
+    .navbar-collapse.show {
+        display: flex; /* Show when toggled */
+    }
+
+    .navbar-toggler {
+        margin-bottom: 1em; /* Space between toggler and links */
+    }
+}
+

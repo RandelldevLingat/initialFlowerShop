@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .new-product-container {
+            position: relative;
+            width: 200px; /* Set a width for the product card */
+            margin: 20px;
+            overflow: hidden; /* Ensures the overlay doesn't exceed the card */
+            border: 1px solid #ccc; /* Optional border for the card */
+        }
+
+        img {
+            width: 100%; /* Makes the image responsive */
+            display: block; /* Removes bottom spacing */
+        }
+
+        .details {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .overley {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0; /* Initially hidden */
+            transition: opacity 0.3s; /* Smooth transition */
+        }
+
+        .new-product-container:hover .overley {
+            opacity: 1; /* Show overlay on hover */
+        }
+
+        .ratings {
+            margin: 5px 0;
+        }
+
+        button {
+            background-color: #f39c12; /* Button color */
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e67e22; /* Darker on hover */
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="new-product-container">
+            <img src="images/product1.jpg" alt="Product Image"/>
+            <div class="overley">
+                <p>VIEW DETAILS</p> <!-- Text on overlay -->
+            </div>
+            <div class="details">
+                <strong><p>TITLE</p></strong>
+                <div class="ratings">
+                    <i class="fas fa-star fa-sm"></i>
+                    <i class="fas fa-star fa-sm"></i>
+                    <i class="fas fa-star fa-sm"></i>
+                    <i class="fas fa-star fa-sm"></i>
+                    <i class="fas fa-star fa-sm"></i>
+                </div>
+                <p>$12.90</p>
+                <button>SHOP NOW</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

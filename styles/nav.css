@@ -1,0 +1,272 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    scroll-behavior: smooth;
+    
+}
+
+body{
+    margin-top: 3em;
+}
+
+.custom-color{
+    background-color: rgb(168, 168, 168);
+}
+
+nav{
+    font-family: "Montserrat", sans-serif;
+    padding: 0;
+}
+
+.nav-wrapper img{
+    width: 130px;
+    height: 90px;
+}
+.logo {
+    height: 130px;
+    width: 160px;
+}
+.nav-item{
+    display: flex;
+    align-items: center;
+}
+
+.nav-item > *{
+    margin-inline: .5em;
+    font-size: 18px;
+}
+
+.navbar-nav .nav-item .nav-link{
+    transition: all ease-in-out .3s;
+}
+
+.navbar-nav .nav-item .nav-link:hover,
+.navbar i:hover,
+.navbar-nav .nav-item .nav-link:active
+.nav-item i:hover{
+    color: rgb(23, 37, 84);
+}
+
+.nav-item i{
+    font-size: 1.2em;
+    color: transparent; /* Makes the fill transparent */
+    -webkit-text-stroke: 2px black; /* Adds a black border (you can change the color and width) */
+}
+
+@media only screen and (max-width:990px){
+    .nav-item .fas{
+        margin-right: 1.5em;
+    }
+}
+
+/* PRODUCT-PAGE CSS */
+
+/* Flexbox layout for larger viewports */
+.container .row {
+    display: flex;
+    flex-wrap: wrap; /* Ensure items wrap on smaller screens */
+    align-items: flex-start; /* Align items at the top */
+}
+
+/* TAKE NOTE OF THIS LINE  TAKE NOTE OF THIS LINE  TAKE NOTE OF THIS LINE  TAKE NOTE OF THIS LINE  TAKE NOTE OF THIS LINE  */
+.items {
+    flex: 1 1 40%; /* Takes 40% of the row */
+    max-width: 40%; /* Prevents growing beyond 40% */
+    height: auto; /* Remove fixed height */
+}
+
+.product-info {
+    flex: 1 1 60%; /* Takes the remaining 60% of the row */
+    max-width: 60%; /* Prevents growing beyond 60% */
+    padding-left: 20px; /* Space between the image and product info */
+}
+
+/* Make the image responsive */
+.items img {
+    display: block;
+    width: 100%; /* Without this one the image is going to retain it's original or natural size*/
+    height: auto;
+}
+
+/* Media query for smaller viewports */
+@media (max-width: 992px) {
+    .row {
+        flex-direction: column; /* Stack the items vertically */
+    }
+
+    .items, 
+    .product-info {
+        max-width: 100%; /* Both take full width */
+        flex-basis: 100%; /* Ensures both take up full row */
+    }
+
+    .product-info {
+        padding-left: 0; /* Remove left padding when stacked */
+    }
+}
+
+/* THIS IS THE CHILD IMAGE OF THE MAIN IMAGE */
+.small-img-group {
+    display: flex;
+    justify-content: space-between; /* This can be changed to 'flex-start' or 'center' */
+}
+
+.small-img-col{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-block: .2em;
+    flex-basis: 24%;
+}
+
+.small-img-col img{
+    height: 80%;
+}
+
+
+/* PRODUCT DESCRIPTION PART */
+.product-info{
+    font-family: "Poppins";
+    
+}
+
+.product-info h6{
+    text-decoration: underline;
+    opacity: .5;
+}
+
+.buy-btn{
+    padding: .5em 1.2em;
+    border: 1px solid rgb(23, 37, 84);
+    background-color: rgb(23, 37, 84);
+    color: white;
+    cursor: pointer;
+    border-radius: .2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    font-family: Poppins;
+}
+
+.buy-btn:active{
+    transform: scale(0.9); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.product-info input{
+    width: 50px;
+    height: 40px;
+    padding-left: .3em;
+}
+
+.product-info input:focus{
+    outline: none;
+}
+
+
+/* RELATED PRODUCT CPYCOPY CSS */
+
+
+.brand-row{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin-inline: 2em;
+    margin-top: 1.5em;
+}
+
+.brand-container{
+    position: relative;
+    padding: .5em;
+    box-sizing: border-box;
+    transition: all ease .2s;
+    border-radius: .5em;
+    width: 100%;
+    max-width: 280px;
+    min-height: 23em;
+    font-family: "Poppins";
+}
+
+.brand-container{
+    position: relative;
+    width: 300px;
+    min-height: 23em;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    box-sizing: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all ease .3s;
+}
+.row-title{
+    font-size:42px;
+    font-family: "Poppins";
+    font-weight: 700;
+    margin: 2em 32px 32px 2.2em;
+    color: rgb(23, 37, 84);
+}
+
+
+.brand-container:hover img{
+    filter: contrast(150%) brightness(100%);
+}
+
+.brand-container:hover{
+    transform: scale(1.05);
+}
+
+.details-row-1{
+    position: relative;
+    font-family: Poppins;
+}
+.details-row-1 button{
+    position: absolute;
+    bottom: -7.5em; /* Adjust this value to hide it below the card */
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    padding: .5em .9em;
+    background-color: rgb(23, 37, 84);
+    color: white;
+    border: 1px solid gray;
+    border-radius: .2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.brand-container:hover .details-row-1 button{
+    bottom: -3em;
+}
+.details-row-1 button:active{
+    transform: translateX(-50%) scale(0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.brand-container strong p{
+    margin-bottom: 2em;
+    margin-top: 10px;
+}
+
+.brand-container p{
+    opacity: .8;
+    text-align: left;
+}
+
+.brand-row > * {
+    flex: none; /* Removes the flex behavior */
+    width: 100%; /* Adjust width as needed */
+    max-width: 280px; /* Maintain consistency with new-product-container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: .5em;
+}
+
+.brand-row .brand-container img{
+    width: 100%; /* Set the desired width, for example 100% to fill the container */
+    height: auto; /* Auto height will maintain the aspect ratio */
+    max-width: 280px;
+    object-fit: contain; /* Ensures the image fits within the container without stretching */
+}
+
+.brand-container .ratings > *{
+    color: gold;
+}

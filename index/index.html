@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/nav.css">
+     <!-- BOOTSTRAP -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- CDN  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Lato -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+ <nav class="navbar navbar-expand-lg custom-color fixed-top">
+    <div class="container-fluid nav-wrapper">
+        <img class="logo" src="../images/logo.webp" />
+        <button class="navbar-toggler" id="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-4 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="shop.html">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about-us">About us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#featured">Featured</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#footer">Contacts</a>
+                </li>
+            </ul>
+        </div>
+        <ul class="navbar-nav mb-4 mb-lg-0"> <!-- Moved this outside the collapsible div -->
+            <li class="nav-item">
+                <i class="fas fa-shopping-cart"></i>
+            </li>
+            <li class="nav-item">
+                <i class="fas fa-user"></i>
+            </li>
+            <button class="header-login-button">Login</button>
+        </ul>
+    </div>
+</nav>
+
+
+<main id="home">
+    <div class="home-container">
+        <img class="home-right-image" src="../image/top-view-beautiful-roses-bouquet-with-pink-ribbon-removebg.png"/>
+
+        <div class="home-text">
+            <h1><span>Lorem ipsum </span>dolor sit amet ensing</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum distinctio alias atque beatae reiciendis sunt laboriosam necessitatibus explicabo, quo numquam!</p>
+            <button>Shop Now</button>
+        </div>
+    </div>
+</main>
+
+
+<section id="featured" class="featured">
+    <div class="featured-title">
+        <strong><span>Featured</span></strong>
+        <h1>Featured Finds</h1>
+    </div>
+    <div class="featured-container">
+        <div class="featured-card">
+        <img src="../image/Bouquet.png"/>
+        <div class="featured-details">
+                <strong><p class="product-name">Product Name</p></strong>
+                <button>Shop Now</button>
+            </div>
+        </div>
+
+        <div class="featured-card">
+        <img src="../image/Bouquet.png"/>
+        <div class="featured-details">
+                <strong><p class="product-name">Product Name</p></strong>
+                <button>Shop Now</button>
+            </div>
+        </div>
+        
+        <div class="featured-card">
+            <img src="../image/Bouquet.png"/>
+            <div class="featured-details">
+                <strong><p class="product-name">Product Name</p></strong>
+                <button>Shop Now</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about-us" class="about-us">
+    <div class="about-img">
+        <img src="../image/Bouquet.png"/>
+    </div>
+    <div class="about-text">
+        <span>About Us</span>
+        <h2>What do we do?</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel recusandae, perspiciatis odit, beatae repellendus a quam quae nemo ullam pariatur ex quisquam? Dicta consequatur autem voluptatem provident veritatis dolore odit debitis quod, officia placeat harum fuga ducimus. Dolore, esse cupiditate!</p>
+    </div>
+</section>
+
+
+
+<footer class="footer" id="footer">
+    <div class="footer-container">
+        <div class="footer-grid-row">
+            <div class="footer-main-section">
+                <img class="logo" src="../images/logo.webp" />
+                <h1>Lorem ipsum dolor</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni dignissimos obcaecati harum quas voluptatibus natus illum unde quo veritatis inventore.</p>
+            </div>
+            <div class="footer-info-section">
+                <div class="info-details">
+                    <strong><p>Email:</p></strong>
+                    <span>sample@gmail.com</span>
+                </div>
+                
+                <div class="info-details">
+                    <strong><p>Phone:</p></strong>
+                    <span>(+63)09232322323</span>
+                </div>
+
+                <div class="info-details">
+                    <strong><p>Address:</p></strong>
+                    <span>Spain America Japan</span>
+                </div>
+
+                <div class="info-details">
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-linkedin"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<script>
+    let harmburgerMenu = document.getElementById('navbar-toggler');
+    
+    harmburgerMenu.onclick = function(){
+        
+    }
+</script>
+<script>
+    console.log('Bootstrap loaded:', !!document.querySelector('.navbar-toggler'));
+</script>
+</body>
+</html>

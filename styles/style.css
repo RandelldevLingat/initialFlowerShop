@@ -1,0 +1,315 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    scroll-behavior: smooth;
+    scroll-padding: 10em;
+}
+
+body{
+    height: 300vh;
+    margin-top: 6em;
+}
+
+
+.home {
+    max-width: 100%;
+    font-family: Poppins;
+    background-color: rgb(224, 223, 223);
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-position-x: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    isolation: isolate;
+}
+
+.home::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/bgImage.webp'); /* Same background image */
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Puts it behind the content */
+    filter: brightness(60%) grayscale(1);}
+
+.container .home-details {
+    position: relative; /* Ensure it’s above the ::before element */
+    z-index: 1; /* Make sure it's in front of the background */
+    margin-inline: 38px;
+}
+
+.container .home-details h1, 
+.container .home-details p {
+    color: white;
+}
+
+.container .home-details h1{
+    font-size: 47px;
+    font-weight: 700;
+}
+
+.container .home-details button {
+    padding: 0.5em 0.9em;
+    background-color: rgb(23, 37, 84);
+    color: white;
+    border: 1px solid gray;
+    border-radius: 0.2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all ease 0.1s;
+    z-index: 1; /* Ensures button stays above the background */
+}
+
+.container .home-details button:active {
+    transform: scale(0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.home-details h1 span{
+    color: rgb(23, 37, 84) ;
+}
+
+.row-title, #new-products h1{
+    font-size:42px;
+    font-family: "Poppins";
+    font-weight: 700;
+    margin: 2em 32px 32px 2em;
+    color: rgb(23, 37, 84);
+}
+
+#new-products h1{
+    margin-left: 1.5em;
+}
+
+.brand-row{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin-inline: 2em;
+    margin-top: 1.5em;
+}
+
+.brand-container{
+    position: relative;
+    padding: .5em;
+    box-sizing: border-box;
+    transition: all ease .2s;
+    border-radius: .5em;
+    width: 100%;
+    max-width: 280px;
+    min-height: 23em;
+    font-family: "Poppins";
+}
+
+.brand-container{
+    position: relative;
+    width: 300px;
+    min-height: 23em;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    box-sizing: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all ease .3s;
+}
+
+.brand-container:hover img{
+    filter: contrast(150%) brightness(100%);
+}
+
+.brand-container:hover{
+    transform: scale(1.05);
+}
+
+.details-row-1{
+    position: relative;
+    font-family: Poppins;
+}
+.details-row-1 button{
+    position: absolute;
+    bottom: -7.5em; /* Adjust this value to hide it below the card */
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    padding: .5em .9em;
+    background-color: rgb(23, 37, 84);
+    color: white;
+    border: 1px solid gray;
+    border-radius: .2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.brand-container:hover .details-row-1 button{
+    bottom: -3em;
+}
+.details-row-1 button:active{
+    transform: translateX(-50%) scale(0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.brand-container strong p{
+    margin-bottom: 2em;
+    margin-top: 10px;
+}
+
+.brand-container p{
+    opacity: .8;
+    text-align: left;
+}
+
+.row > * {
+    flex: none; /* Removes the flex behavior */
+    width: 100%; /* Adjust width as needed */
+    max-width: 280px; /* Maintain consistency with new-product-container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: .5em;
+}
+
+.row .brand-container img{
+    width: 100%; /* Set the desired width, for example 100% to fill the container */
+    height: auto; /* Auto height will maintain the aspect ratio */
+    max-width: 280px;
+    object-fit: contain; /* Ensures the image fits within the container without stretching */
+}
+
+.brand-container .ratings > *{
+    color: gold;
+}
+
+
+/* SECTION 2 CSS */
+
+/* Starting Animation */
+#new-products{
+    margin-top: 5em;
+}
+
+.new-items {
+    position: relative;
+    overflow: hidden;
+    box-shadow: none; 
+    max-width: 300px;
+    height: 280px;
+    border-radius:0;
+}
+
+.details-row-2 {
+    position: absolute;
+    bottom: -100px; /* Start off-screen */
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: 0 auto;
+    transition: bottom 0.5s ease-in-out;
+    color: black;
+}
+
+.new-items:hover .details-row-2 {
+    bottom: 70px; /* Slide into view */
+}
+
+.product-name, .shop-now {
+    opacity: 0; /* Start invisible */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.new-items:hover .product-name, 
+.new-items:hover .shop-now {
+    opacity: 1; /* Become visible */
+    transform: translateY(1); /* Reset position to original */
+    filter: contrast(100%);
+}
+
+.product-name {
+    transform: translateY(-10px); /* Start slightly above */
+}
+
+.shop-now {
+    transform: translateY(10px); /* Start slightly below */
+}
+
+/* Additional button styling */
+.shop-now {
+    padding: .5em .9em;
+    border: 1px solid rgb(23, 37, 84);
+    background-color: rgb(23, 37, 84);
+    color: white;
+    cursor: pointer;
+    border-radius: .2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+
+/* Ending Animation */
+
+#new-products .new-items img{
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;
+}
+
+#new-products .new-items{
+    position: relative;
+
+}
+
+#new-products .new-items .details-row-2{
+    font-weight: bold;
+    transition: all ease .4s;
+}
+
+#new-products .new-items:nth-child(1) .details-row-2,
+#new-products .new-items:nth-child(2) .details-row-2,
+#new-products .new-items:nth-child(3) .details-row-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    text-align: center;
+}
+
+/* SHOP PAGE CSS */
+
+.pagination{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    text-align: center;
+    margin-block: 2.3em;
+    width: 100%;
+}
+.pagination .page-link{
+    color: rgb(19, 40, 102);
+    border-color: rgb(19, 40, 102);
+    transition: ease .2s all;
+    padding-inline: 1.5em;
+}
+
+.pagination .page-link:hover{
+    background-color: rgb(168, 164, 164);
+    font-weight: 700;
+    color: black;
+}
+
+.pagination .page-link:active{
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: 700;
+}
+
+
